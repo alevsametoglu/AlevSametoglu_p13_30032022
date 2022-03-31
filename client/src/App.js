@@ -1,13 +1,19 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { Header } from "./components/Header/Header";
-
+import MainLayout from "./Layout/MainLayout";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import { Login } from "./pages/Login/Login";
 function App() {
   return (
-    <div className="App">
-      selam
-      <Header />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} />
+
+          {/* <Route path="*" element={<ErrorPage />} /> */}
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

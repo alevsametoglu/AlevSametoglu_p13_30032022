@@ -1,5 +1,11 @@
 import React from "react";
+import "./Footer.scss";
 
-export const Footer = () => {
-  return <div>Footer</div>;
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <p className="text">Copyright 2022 Argent Bank</p>
+    </footer>
+  );
 };
+export default Footer;

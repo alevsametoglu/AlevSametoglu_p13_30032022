@@ -1,13 +1,21 @@
 import React from "react";
-import logo from "../Assets/argentBankLogo.png";
+import { Link } from "react-router-dom";
+import logo from "./argentBankLogo.png";
+import "./Header.scss";
 
-export const Header = () => {
+const Header = () => {
   return (
-    <div>
-      {logo}
+    <div className="header">
+      <Link to="/">
+        <img className="logo" src={logo} alt="" />
+      </Link>
       <div>
-        <button>sing in </button>
+        <Link to="login" className="login">
+          <i className="fa fa-user-circle"></i>
+          <span>Sing in</span>
+        </Link>
       </div>
     </div>
   );
 };
+export default Header;

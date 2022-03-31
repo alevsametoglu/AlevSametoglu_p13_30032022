@@ -1,0 +1,20 @@
+.features {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  .feature {
+    text-align: center;
+    font-size: 18px;
+    img {
+      width: 150px;
+      border: 10px solid #42b983;
+      border-radius: 50%;
+    }
+    p {
+      font-size: 16px;
+      max-width: 350px;
+    }
+  }
+}
