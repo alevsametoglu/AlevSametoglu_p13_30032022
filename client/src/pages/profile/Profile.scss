@@ -1,0 +1,36 @@
+.main {
+  background-color: #12002b;
+  height: calc(100vh - 180px);
+  position: relative;
+  overflow-y: scroll;
+  button {
+    cursor: pointer;
+  }
+
+  .header {
+    color: #fff;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      text-align: center;
+    }
+
+    .edit-button {
+      border-color: #00bc77;
+      background-color: #00bc77;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px;
+      display: block;
+    }
+  }
+  .update-form {
+    margin: auto;
+    display: block;
+  }
+  .transaction {
+    margin-top: 80px;
+  }
+}

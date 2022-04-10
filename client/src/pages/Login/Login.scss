@@ -1,6 +1,10 @@
 .login-page {
   background-color: #12002b;
   height: calc(100vh - 180px);
+  position: relative;
+  button {
+    cursor: pointer;
+  }
 
   .sign-in-content {
     box-sizing: border-box;
@@ -11,7 +15,8 @@
     padding: 2rem;
     text-align: center;
     border: 1ps solid #12002b;
-    position: relative;
+    position: absolute;
+    left: 40%;
     .sign-in-icon {
       font-size: 5rem;
     }
