@@ -10,6 +10,13 @@
   .login {
     text-decoration: none;
     font-size: 20px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    .fa {
+      color: #541b8b;
+    }
+
     span {
       color: black;
       font-weight: bold;
