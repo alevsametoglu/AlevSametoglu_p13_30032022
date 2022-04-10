@@ -1,24 +1,63 @@
-import React from "react";
 import "./Login.scss";
+import { useForm } from "react-hook-form";
+import api from "../../api.js";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+// import { login } from "../../redux/appSlice.js";
+import { appActions } from "../../redux/appSlice";
+import { userActions } from "../../redux/userSlice";
 
 export const Login = () => {
+  const [loginError, setLoginError] = useState();
+  const dispatch = useDispatch();
+
+  const { register, handleSubmit, formState } = useForm({
+    defaultValues: {
+      username: "tony@stark.com",
+      password: "password123",
+    },
+  });
+  const onSubmit = (data) => {
+    api
+      .login(data.username, data.password)
+      .then((user) => {
+        console.log(user);
+        dispatch(appActions.login());
+        dispatch(userActions.updateProfile(user));
+      })
+      .catch((error) => setLoginError(error.message));
+  };
+
   return (
     <main className="login-page">
-      <section class="sign-in-content">
-        <i class="fa fa-user-circle sign-in-icon"></i>
+      <section className="sign-in-content">
+        <i className="fa fa-user-circle sign-in-icon"></i>
         <h1>Sign In</h1>
-        <form>
-          <div class="input-wrapper">
-            <label for="username">Username</label>
-            <input type="text" id="username" />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="input-wrapper">
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              {...register("username", {
+                required: true,
+              })}
+            />
+            {formState.errors.username && <p>Username is required</p>}
           </div>
-          <div class="input-wrapper">
-            <label for="password">Password</label>
-            <input type="password" id="password" />
+          <div className="input-wrapper">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              {...register("password", { required: true })}
+            />
           </div>
-          <div class="input-remember">
+          {formState.errors.password && <p>Invalid password</p>}
+          {loginError && <p>{loginError}</p>}
+
+          <div className="input-remember">
             <input type="checkbox" id="remember-me" />
-            <label for="remember-me">Remember me</label>
+            <label htmlFor="remember-me">Remember me</label>
           </div>
           <button type="submit" className="sign-in-button">
             Sign In
@@ -28,3 +67,5 @@ export const Login = () => {
     </main>
   );
 };
+
+export default Login;
