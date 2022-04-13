@@ -43,7 +43,9 @@ export const Login = () => {
                 required: true,
               })}
             />
-            {formState.errors.username && <p>Username is required</p>}
+            {formState.errors.username && (
+              <p style={{ color: "red" }}>Username is required</p>
+            )}
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
@@ -52,8 +54,12 @@ export const Login = () => {
               {...register("password", { required: true })}
             />
           </div>
-          {formState.errors.password && <p>Invalid password</p>}
-          {loginError && <p>{loginError}</p>}
+          {formState.errors.password && (
+            <p style={{ color: "red", textAlign: "left" }}>Invalid password</p>
+          )}
+          {loginError && (
+            <p style={{ color: "red", textAlign: "left" }}>{loginError}</p>
+          )}
 
           <div className="input-remember">
             <input type="checkbox" id="remember-me" />
