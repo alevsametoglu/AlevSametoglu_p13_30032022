@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./account.scss";
 
 const Account = (props) => {
@@ -10,7 +11,9 @@ const Account = (props) => {
         <p className="account-amount-description">{props.description}</p>
       </div>
       <div className="account-content-wrapper cta">
-        <button className="transaction-button">View transactions</button>
+        <Link to="/transaction" className="transaction-button">
+          View transactions
+        </Link>
       </div>
     </div>
   );
