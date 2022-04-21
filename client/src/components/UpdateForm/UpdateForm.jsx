@@ -19,10 +19,12 @@ const UpdateForm = ({ onClose }) => {
   } = useForm({});
 
   const onSubmit = (data) => {
-    api.updateProfile(data.firstName, data.lastName).then((profile) => {
-      dispatch(userActions.updateProfile(profile));
-      onClose();
-    });
+    console.log(data);
+    dispatch(userActions.updateProfile(data));
+    // api.updateProfile(data.firstName, data.lastName).then((profile) => {
+    //   dispatch(userActions.updateProfile(profile));
+    //   onClose();
+    // });
   };
 
   // console.log(errors);

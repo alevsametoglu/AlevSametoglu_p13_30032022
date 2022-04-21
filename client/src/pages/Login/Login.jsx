@@ -23,7 +23,7 @@ export const Login = () => {
       .then((user) => {
         console.log(user);
         dispatch(appActions.login());
-        dispatch(userActions.updateProfile(user));
+        dispatch(userActions.setProfile(user));
       })
       .catch((error) => setLoginError(error.message));
   };
