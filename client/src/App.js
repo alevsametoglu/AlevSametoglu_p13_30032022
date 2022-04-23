@@ -4,7 +4,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/profile/Profile";
 import ProgressPage from "./pages/Progress/ProgressPage";
-import ErrorPage from "./pages/Error/ErrorPage";
+
 function App() {
   return (
     <Router>
@@ -14,7 +14,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/transaction" element={<ProgressPage />} />
-          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </Router>
