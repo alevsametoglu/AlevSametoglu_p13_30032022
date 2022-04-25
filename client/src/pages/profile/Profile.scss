@@ -29,6 +29,9 @@
   .update-form {
     margin: auto;
     display: block;
+    @media (max-width: 620px) {
+      width: 300px;
+    }
   }
   .transaction {
     margin-top: 80px;

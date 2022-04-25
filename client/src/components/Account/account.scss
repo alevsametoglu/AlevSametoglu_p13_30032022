@@ -11,6 +11,9 @@
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 2rem;
+  @media (max-width: 620px) {
+    flex-direction: column;
+  }
   .account-content-wrapper {
     .account-title {
       margin: 0;

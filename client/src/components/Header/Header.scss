@@ -4,8 +4,15 @@
   justify-content: space-between;
   padding: 20px;
   height: 60px;
+  @media (max-width: 620px) {
+    padding: 5px;
+  }
+
   .logo {
     width: 250px;
+    @media (max-width: 620px) {
+      width: 182px;
+    }
   }
   .login {
     text-decoration: none;
@@ -13,6 +20,10 @@
     display: flex;
     gap: 5px;
     align-items: center;
+    @media (max-width: 620px) {
+      font-size: 16px;
+    }
+
     .fa {
       color: #541b8b;
     }

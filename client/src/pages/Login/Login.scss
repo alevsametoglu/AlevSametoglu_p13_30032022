@@ -2,6 +2,9 @@
   background-color: #12002b;
   height: calc(100vh - 180px);
   position: relative;
+  @media (max-width: 620px) {
+    padding: 4px;
+  }
   button {
     cursor: pointer;
   }
@@ -14,9 +17,12 @@
     margin-top: 3rem;
     padding: 2rem;
     text-align: center;
-    border: 1ps solid #12002b;
+    border: 1px solid #12002b;
     position: absolute;
     left: 40%;
+    @media (max-width: 620px) {
+      position: static;
+    }
     .sign-in-icon {
       font-size: 5rem;
     }
