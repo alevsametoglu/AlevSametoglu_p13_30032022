@@ -21,13 +21,8 @@ const UpdateForm = ({ onClose }) => {
   const onSubmit = (data) => {
     console.log(data);
     dispatch(userActions.updateProfile(data));
-    // api.updateProfile(data.firstName, data.lastName).then((profile) => {
-    //   dispatch(userActions.updateProfile(profile));
-    //   onClose();
-    // });
+    onClose();
   };
-
-  // console.log(errors);
 
   return (
     <div className="update-form">
