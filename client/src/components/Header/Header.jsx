@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import logo from "./argentBankLogo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { appActions } from "../../redux/appSlice";
+import { useNavigate } from "react-router";
 import "./Header.scss";
 
 const Header = () => {
   const { firstName } = useSelector((state) => state.user);
   const { isAuth } = useSelector((state) => state.app);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className="header">
@@ -17,7 +19,11 @@ const Header = () => {
       </Link>
       {isAuth ? (
         <div className="login">
-          <div>
+          <div
+            onClick={() => {
+              navigate({ pathname: "/Profile" });
+            }}
+          >
             <i className="fa fa-user-circle"></i>
             <span>{firstName}</span>
           </div>
